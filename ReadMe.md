@@ -49,7 +49,7 @@ YouTubeLive.newClient()
         String message = event.getMessageText();
         System.out.println(sender+" > "+message);
     })
-    .buildAndConnect(liveStreamId);
+    .buildAndConnect("https://www.youtube.com/watch?v=jfKfPfyJRdk");
 ```
 
 ## More features to come!
