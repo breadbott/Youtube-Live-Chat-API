@@ -4,7 +4,7 @@ import com.breadbot.YouTubeLive;
 import com.google.api.services.youtube.model.LiveChatMessageRetractedDetails;
 import com.google.api.services.youtube.model.LiveChatMessageSnippet;
 
-public class MessageRetractedEvent extends YouTubeEvent {
+public class MessageRetractedEvent extends YouTubeChatEvent {
     public MessageRetractedEvent(LiveChatMessageSnippet snippet, YouTubeLive.YouTubeClient youTubeClient) {
         super(snippet, youTubeClient);
         details = snippet.getMessageRetractedDetails();

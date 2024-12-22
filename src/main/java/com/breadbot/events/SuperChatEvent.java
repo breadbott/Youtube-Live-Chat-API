@@ -6,7 +6,7 @@ import com.google.api.services.youtube.model.LiveChatSuperChatDetails;
 
 import java.math.BigInteger;
 
-public class SuperChatEvent extends YouTubeEvent {
+public class SuperChatEvent extends YouTubeChatEvent {
     public SuperChatEvent(LiveChatMessageSnippet snippet, YouTubeLive.YouTubeClient youTubeClient) {
         super(snippet, youTubeClient);
         details = snippet.getSuperChatDetails();

@@ -6,7 +6,7 @@ import com.google.api.services.youtube.model.LiveChatMessageSnippet;
 
 import java.math.BigInteger;
 
-public class FanFundingEvent extends YouTubeEvent {
+public class FanFundingEvent extends YouTubeChatEvent {
     public FanFundingEvent(LiveChatMessageSnippet snippet, YouTubeLive.YouTubeClient youTubeClient) {
         super(snippet, youTubeClient);
         details = snippet.getFanFundingEventDetails();

@@ -4,7 +4,7 @@ import com.breadbot.YouTubeLive;
 import com.google.api.services.youtube.model.LiveChatMessageSnippet;
 import com.google.api.services.youtube.model.LiveChatPollVotedDetails;
 
-public class PollVotedEvent extends YouTubeEvent {
+public class PollVotedEvent extends YouTubeChatEvent {
     public PollVotedEvent(LiveChatMessageSnippet snippet, YouTubeLive.YouTubeClient youTubeClient) {
         super(snippet, youTubeClient);
         details = snippet.getPollVotedDetails();

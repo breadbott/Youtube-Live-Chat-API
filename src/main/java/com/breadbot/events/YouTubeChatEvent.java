@@ -5,11 +5,11 @@ import com.google.api.services.youtube.model.LiveChatMessageSnippet;
 
 import java.util.Date;
 
-public class YouTubeEvent {
+public class YouTubeChatEvent {
     private final LiveChatMessageSnippet snippet;
     private final YouTubeLive.YouTubeClient youTubeClient;
 
-    public YouTubeEvent(LiveChatMessageSnippet snippet, YouTubeLive.YouTubeClient youTubeClient) {
+    public YouTubeChatEvent(LiveChatMessageSnippet snippet, YouTubeLive.YouTubeClient youTubeClient) {
         this.snippet = snippet;
         this.youTubeClient = youTubeClient;
     }

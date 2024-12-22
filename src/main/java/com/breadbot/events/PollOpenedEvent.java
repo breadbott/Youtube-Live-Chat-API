@@ -7,7 +7,7 @@ import com.google.api.services.youtube.model.LiveChatPollOpenedDetails;
 
 import java.util.List;
 
-public class PollOpenedEvent extends YouTubeEvent {
+public class PollOpenedEvent extends YouTubeChatEvent {
     public PollOpenedEvent(LiveChatMessageSnippet snippet, YouTubeLive.YouTubeClient youTubeClient) {
         super(snippet, youTubeClient);
         details = snippet.getPollOpenedDetails();

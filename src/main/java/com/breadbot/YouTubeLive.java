@@ -19,7 +19,7 @@ public class YouTubeLive {
     private String apiKey;
     private String oAuthToken;
 
-    private EventConsumer<YouTubeEvent> anyEvent;
+    private EventConsumer<YouTubeChatEvent> anyEvent;
     private EventConsumer<FanFundingEvent> fanFundingEvent;
     private EventConsumer<MessageDeletedEvent> messageDeletedEvent;
     private EventConsumer<MessageRetractedEvent> messageRetractedEvent;
@@ -79,7 +79,7 @@ public class YouTubeLive {
 
         private final YouTubeLive youTubeLive;
 
-        public YouTubeClient onAnyEvent(EventConsumer<YouTubeEvent> listener) {
+        public YouTubeClient onAnyEvent(EventConsumer<YouTubeChatEvent> listener) {
             youTubeLive.anyEvent = listener;
             return this;
         }
@@ -197,7 +197,7 @@ public class YouTubeLive {
                                 youTubeLive.userBannedEvent.onEvent(new UserBannedEvent(chatMessage.getSnippet(), this), this);
                             }
                             if (youTubeLive.anyEvent != null) {
-                                youTubeLive.anyEvent.onEvent(new YouTubeEvent(chatMessage.getSnippet(), this), this);
+                                youTubeLive.anyEvent.onEvent(new YouTubeChatEvent(chatMessage.getSnippet(), this), this);
                             }
                             youTubeLive.mIds.add(messageId);
                         }
@@ -223,7 +223,7 @@ public class YouTubeLive {
                     videoRequest.setOauthToken(youTubeLive.oAuthToken);
                 }
                 VideoListResponse videoResponse = videoRequest.execute();
-                return videoResponse.getItems().getFirst().getLiveStreamingDetails().getActiveLiveChatId();
+                return videoResponse.getItems().get(0).getLiveStreamingDetails().getActiveLiveChatId();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -240,7 +240,7 @@ public class YouTubeLive {
                     channelRequest.setOauthToken(youTubeLive.oAuthToken);
                 }
                 ChannelListResponse channelResponse = channelRequest.execute();
-                return channelResponse.getItems().getFirst().getSnippet().getTitle();
+                return channelResponse.getItems().get(0).getSnippet().getTitle();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

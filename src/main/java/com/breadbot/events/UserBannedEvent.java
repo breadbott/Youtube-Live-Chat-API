@@ -7,7 +7,7 @@ import com.google.api.services.youtube.model.LiveChatUserBannedMessageDetails;
 
 import java.math.BigInteger;
 
-public class UserBannedEvent extends YouTubeEvent {
+public class UserBannedEvent extends YouTubeChatEvent {
     public UserBannedEvent(LiveChatMessageSnippet snippet, YouTubeLive.YouTubeClient youTubeClient) {
         super(snippet, youTubeClient);
         details = snippet.getUserBannedDetails();
