@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.breadbott:YouTube-Live-Chat-API:1.0.0'
+    implementation 'com.github.breadbott:YouTube-Live-Chat-API:1.0.1'
 }
 ```
 
@@ -28,7 +28,7 @@ maven:
     <dependency>
         <groupId>com.github.breadbott</groupId>
         <artifactId>YouTube-Live-Chat-API</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </dependency>
 </dependencies>
 
